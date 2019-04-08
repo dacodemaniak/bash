@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+	ServerAdmin jean-luc.a@web-projet.com
+	ServerName template.wrk
+	ServerAlias www.template.wrk
+
+	DocumentRoot /home/jean-luc/www/template/web
+
+	# Configuration spécifique Symfony 3
+	<Directory "/home/jean-luc/www/template/web">
+		Require all granted
+		FallbackResource /app.php
+	</Directory>
+
+	# Par sécurité, pas de ressource par défaut dans bundles
+	<Directory "/home/jean-luc/www/template/web/bundles">
+		FallbackResource disabled
+	</Directory>
+</VirtualHost>
