@@ -1,0 +1,5 @@
+#!/bin/bash
+
+~/environments/python3 -m venv $1
+
+source "~/environements/$1/bin/activate"
